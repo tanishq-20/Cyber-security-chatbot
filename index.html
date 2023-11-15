@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        /* Add your funky font here, for example: */
+        body {
+            font-family: 'Your Funky Font', cursive;
+            background-color: #f0f0f0; /* Background color for the entire page */
+        }
+        h1{
+            text-align: center;
+            padding-right: 550px;
+            font-size: 36px;
+            color: #0077cc; /* Text color for the heading */
+        }
+        .chat-container {
+            background-color: #ffffff; /* Background color for the chat container */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            max-width: 100px; /* Adjust the size of your logo as needed */
+        }
+        .chat-header h1 {
+            font-family: 'Your Funky Font', cursive;
+        }
+        .chat-box {
+            background-color: #f9f9f9; /* Background color for the chat box */
+            border: 1px solid #dddddd;
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .chat {
+            margin: 6px 0;
+        }
+        .chat-message p {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .user-input {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #user_input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0077cc; /* Background color for the button */
+            color: #ffffff; /* Text color for the button */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0055aa; /* Background color when hovering over the button */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function scrollToBottom() {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        $(document).ready(scrollToBottom);
+    </script>
+    <title>Cybersecurity Chatbot</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <img class="logo" src="https://cdn.leonardo.ai/users/f53850d5-f23d-43ed-83ed-90f07593b2e8/generations/71a38989-16b9-4f26-88ab-863ba82bc4fc/3D_Animation_Style_a_logo_for_my_newly_created_cybersecurity_c_0.jpg" alt="Your Logo">
+            <h1>CYBERSECURITY CHATBOT</h1>
+        </div>
+        <div class="chat-box" id="chat-box">
+            {% for entry in chat_history %}
+            <div class="chat">
+                <div class="chat-message user">
+                    <p>You: {{ entry.user }}</p>
+                </div>
+                <div class="chat-message chatbot">
+                    <p>Chatbot: {{ entry.chatbot }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <form action="/chat" method="post" class="user-input">
+            <input type="text" name="user_input" id="user_input" placeholder="Type your doubt in the search bar...">
+            <button type="submit">Ask</button>
+        </form>
+    </div>
+</body>
+</html>
