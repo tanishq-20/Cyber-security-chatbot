@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f; /* Dark background color */
+    color: #fff; /* Text color */
+}
+
+.chat-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #444; /* Dark border color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px #444; /* Dark shadow */
+    overflow: hidden;
+    background-color: #2f2f2f; /* Dark chat container background */
+}
+
+.chat-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.chat-box {
+    background-color: #1f1f1f; /* Dark chat box background */
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #444;
+    margin-bottom: 10px;
+    overflow: auto;
+    max-height: 400px; /* Adjust as needed for the maximum chat box height */
+}
+
+.chat-message {
+    margin: 10px 0;
+}
+
+.user {
+    text-align: right;
+}
+
+.user p {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.chatbot p {
+    background-color: #555; /* Dark chatbot message background */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.user-input {
+    text-align: center;
+    padding: 20px;
+}
+
+#user_input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2f2f2f;
+    color: #fff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
